@@ -1,0 +1,118 @@
+Ripasso
+    
+    Le Vlan
+
+        utilizziamo all'interno delle LAN di tipo Ethernet
+
+            quindi non con il wifi o cose così
+
+            devonoe essere cablate
+
+        Nel frame Ethernet
+
+            quindi il "pacchetto" in cui girano i file Ethernet
+
+            c'è una parte di vlan 
+
+                fatta di 4 byte
+
+                serve per taggare le vlan
+
+                e esiste solo quando usiamo le vlan
+
+        Virtual LAN
+
+            le vlan servono per partizionare una lan 
+
+            senza fare subnetting
+
+                gli ip devono comunque essere diversi
+
+            il problema loro è che si può fare solo negli switch
+
+        Per partizionare uno switch fisicamente
+
+            io scelgo che delle porte sono una certa vlan e altre ecc
+
+        posso estendere il tutto collegando due switch e dove collego deve diventare quella vlan se no non va 
+
+        e per estendere in modo ottimizato posso collegare con una porta non partizionata con un cavo trunk a una altra porta non partizionata di un altro switch
+
+        ed è tutto dezcritto in IEEE 802.1Q
+
+        e ethernet è IEEE 802.3
+
+
+            
+
+    ripasso:
+
+        davanti c'è il mac address
+
+            e dai tre 
+
+    Hub e Switch
+
+        l'hub riporduce il emssaggio in tutte le porte
+
+        e lo Switch consulta la tabella 
+
+            c'è scritto porta: Mac address
+
+            e controlla e manda a quello giusto
+
+
+    VTP
+
+        virtual trunking protocol
+
+        non è uno standard di CISCO
+
+            produttore di dispositivi di rete
+
+        e non è riconosciuto dal mondo
+
+        e serve per configurare in maniera quasi automatica 
+
+        esempio
+
+            entro sta sera devi configurare tutte le vlan di 30 swithc ciascuno con 128 porte
+
+        c'è lo switch sever che da le configurazioni
+
+            lo switch server riceve e lo implementa
+
+        lo switch transparent
+
+            leggono e rimandano senza implementare
+
+        e ha dei parametri  
+
+            la versione del protocollo
+
+                1 2 3 
+
+            il mode
+
+                congigurazione di ogni switch
+
+                    server client o transparent
+
+            nome dominio
+
+                tutti i pc assegno un nome di dominio uguale per tutti
+
+                è il nome che configura il gruppo di switch che devono avere la stessa configurazione di vlan
+
+            comfig revision
+
+                è un contatore della versione delle configurazioni
+
+                e lo uso per fare uno storico
+
+                e per capire se ho qualche switch non aggiornato
+
+
+    
+
+    

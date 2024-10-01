@@ -1,0 +1,18 @@
+192.16.10.0 /25
+255.255.255.128
+
+192.16.10.0 - indirizzo rete
+192.16.10.1 - primo indirizzo utile
+192.16.10.126 - ultimo indirizzo utile
+192.16.10.127 - indirizzo broadcast
+
+
+Rete stampanti:
+
+192.16.10.128 /28
+255.255.255.240
+
+192.16.10.128 - indirizzo rete
+192.16.10.129 - primo indirizzo utile
+192.16.10.142 - ultimo indirizzo utile
+192.16.10.143 - indirizzo broadcast

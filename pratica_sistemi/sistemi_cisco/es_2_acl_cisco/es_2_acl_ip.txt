@@ -1,0 +1,65 @@
+rete generale:
+    network:
+        192.168.1.0
+        255.255.255.0 --> 00000000
+
+rete grafica:
+    network
+        192.168.1.128
+        255.255.255.192 --> 10 000000
+
+    Host:
+        min = 192.168.1.130
+        max = 192.168.1.254
+    
+    Router: 192.168.1.129
+    broadcast: 192.168.1.255
+
+rete spedizione:
+    network
+        192.168.1.64
+        255.255.255.192 --> 01 000000
+
+    Host:
+        min = 192.168.1.66
+        max = 192.168.1.126
+    
+    Router: 192.168.1.65
+    broadcast: 192.168.1.127
+
+rete stampanti:
+    network
+        192.168.1.0
+        255.255.255.224 --> 000 00000
+
+    Host:
+        min = 192.168.1.2
+        max = 192.168.1.30
+    
+    Router: 192.168.1.1
+    broadcast: 192.168.1.31
+
+
+MANCA ENCAPSULATION SUL ROUTER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!Chiedere al prof se destinando due bit degli ip per la sottrete ottengo 4 sottreti possibili o 2!
+
+
