@@ -86,6 +86,10 @@ Ripasso
 
             leggono e rimandano senza implementare
 
+        lo switch client
+
+            riceve e implementa e la trasmettono
+
         e ha dei parametri  
 
             la versione del protocollo
@@ -104,13 +108,28 @@ Ripasso
 
                 è il nome che configura il gruppo di switch che devono avere la stessa configurazione di vlan
 
-            comfig revision
+            config revision
 
                 è un contatore della versione delle configurazioni
 
                 e lo uso per fare uno storico
 
                 e per capire se ho qualche switch non aggiornato
+
+            Inter-VLAN routing 
+
+                abbiamo due vlan facciamole comunicare
+
+                NOI lo facciamo sul router on a stick
+
+                si può fare con router a due porte
+
+                oppure uno switch di livello 3
+
+                
+
+
+    
 
 
     
