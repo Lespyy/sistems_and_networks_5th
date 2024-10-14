@@ -1,0 +1,151 @@
+2^s
+
+0, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096
+
+0, 1, 2, 3,  4,  5,  6,   7,   8,   9,   10,   11,   12
+
+
+CLI:
+
+# Preparing the network configuration commands as a single text file
+
+commands = """
+Switch - Mostra la tabella degli indirizzi MAC:
+show mac address-table
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+**NAT - Configurazione NAT statico:**
+
+enable
+configure terminal
+interface <interfaccia-interna>
+ip nat inside
+exit
+interface <interfaccia-esterna>
+ip nat outside
+exit
+ip nat inside source static 192.168.1.0 50.10.10.1
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+**VLAN - Creazione e configurazione VLAN:**
+
+enable
+configure terminal
+vlan 10
+name PC-VLAN
+exit
+interface FastEthernet0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+*Trunking - Configura la porta in trunk:*
+
+
+interface FastEthernet0/1
+switchport mode trunk
+exit
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+*Router-on-a-Stick - Configurazione dell'interfaccia VLAN:*
+
+interface FastEthernet0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+exit
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+**DHCP - Configurazione del pool DHCP:**
+enable
+configure terminal
+ip dhcp pool LAN-NAME
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 8.8.8.8
+exit
+ip dhcp excluded-address 192.168.1.1 192.168.1.10
+show ip dhcp binding
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+*DHCP in VLAN - Configurazione del pool DHCP per VLAN:*
+ip dhcp pool VLAN10
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+dns-server 8.8.8.8
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+**ACL - Configurazione di una ACL standard per bloccare IP specifici:**
+
+enable
+configure terminal
+access-list 1 deny 192.168.1.50 0.0.0.0
+access-list 1 permit any
+
+interface FastEthernet0/1
+ip access-group 1 in
+exit
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+**ACL - Configurazione di una ACL estesa per consentire solo il traffico HTTP da una subnet:**
+
+enable
+configure terminal
+access-list 100 permit tcp 192.168.1.0 0.0.0.255 any eq 80
+access-list 100 deny ip any any
+exit
+interface FastEthernet0/1
+ip access-group 100 in
+exit
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+**ACL - Bloccare l'accesso a una subnet specifica:**
+
+enable
+configure terminal
+access-list 101 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+access-list 101 permit ip any any
+exit
+interface FastEthernet0/1
+ip access-group 101 in
+exit
+
+
+////////////////////////////
+
+
+Spanning Tree - Disabilita Spanning Tree per VLAN 1:
+enable
+configure terminal
+no spanning-tree vlan 1
+exit
+show spanning-tree
+
+Routing - Configurazione delle rotte statiche:
+
+Su Router1:
+enable
+configure terminal
+ip route 8.8.8.0 255.255.255.0 200.100.50.2
+
+Su Router2:
+enable
+configure terminal
+ip route 192.168.1.0 255.255.255.0 200.100.50.1
+
+Routing - Rotta per un singolo indirizzo IP:
+ip route 50.10.10.1 255.255.255.255 200.100.50.1
+
+
