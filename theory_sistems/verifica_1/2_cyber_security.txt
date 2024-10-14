@@ -1,0 +1,188 @@
+Cyber Security
+
+    La sicurezza informatica è composta da verie parti che sono 
+
+        segretezza (= riservatezza)
+
+        Integrità
+
+        autenticità
+
+    e riguarda
+
+        hardware
+
+        software
+
+        reti
+
+    segretezza
+
+        i dati e le comunicazioni non devono essere comprensibili a terzi
+
+            ovvero altri soggetti non coinvolti
+
+        cosa
+
+            psw
+
+            mail
+
+            file
+        
+    Integrità
+
+        dati protetti da errori e anche da manipolazioni fatti da terzi
+
+        e quindi protette da modifiche 
+
+    autenticità
+
+        vuol dire che le parti coinvolte dalle comunicazioni o il titolare dei dati è autentico
+
+        nessuno può fingersi quella persona
+
+        esempio instagram controlla che te sia tu e che non sia un altro
+
+    La scienza che studia la segretezza
+
+        criptografia
+
+            la scienza dei codici segreti
+
+            molto vicina alla matematica
+
+            e veniva usata fin dai romani
+
+                cifrario di cesare
+
+        normalmente un codice segreto 
+
+            permette di criptare e decriptare un testo
+
+            quindi
+
+                testo chiaro -> codice segreto -> codice criptato
+
+            e deve essere anche un codice segreto alla -1
+
+                testo criptato -> codice segreto -> codice chiaro
+
+            è composto da 
+            
+                un algoritmo
+
+                una / delle chiavi
+
+            la visibilità
+
+                è data dalla chiave non dall'algoritmo
+
+                L'algoritmo è pubblico
+
+                E' LA CHIAVE AD ESSERE SEGRETA 
+
+                se no il gioco non regge
+
+            Principio di Korckhoffs
+
+                dice che
+
+                    la segretezza di un codice segreto sta nelle chiavi
+
+                E non
+
+                    negli algoritmi che sono pubblici
+
+                è un bene che l'algoritmo sia pubblico?
+
+                    SI, perché se ci sono bug posso farmeli scoprire e fixare
+
+            Problema
+
+                oggi giorno si usa algoritmo riservatezza
+
+                    ma ah un limite
+
+                        ovvero che il computer quantistico lo può violare
+
+                    si sa già come cosa
+
+                quindi
+
+                    adesso stiamo implementando algoritmi delle curve ellittiche 
+
+            caratteristiche che deve eavere unc codice segreto
+        
+        Caratteristiche da codice segreto
+
+            Effetto Valanga 
+
+                se io ho due testi in chiaro molto simili 
+
+                    grazie all'effetto valanga essi diventano diversissimi
+
+            Diffusione
+
+                ricorda un concetto chimico
+
+                l'idea della diffusione è che 
+
+                    cambia l'ordine dei caratteri 
+
+                proprio come le molecole riscaldate
+
+            Confusione
+
+                il codice segreto confonde il testo con la chiave 
+
+        due tipi di codici segreti
+
+            simmetrici
+
+                faremo ora degli schemini
+
+                    path = "./simmetric_key.png"
+
+                quindi codici in cui la chiave è la stessa
+
+                Problema
+
+                    come faccio a dare la mia chiave agli altri senza farmi beccare?
+              
+            asimmetrici
+
+                c'è una chiave provata SOLO di alice
+
+                    e c'è una chiave pubblica che hanno sia alice che bob 
+
+                io posso mandare da bob a alice
+                
+                    ma non alice a bob
+
+                è quello che usiamo tutt'ora
+
+                e io posso cripatre con la chiave pubblica ma posso decriptare SOLO con la chiave privata
+
+                e quindi il terzo non può fare nulla dal mezzo
+
+                
+
+                
+
+
+            
+            ma ci sono anche gli IBRIDI
+
+
+
+
+    
+
+
+
+
+
+
+
+
