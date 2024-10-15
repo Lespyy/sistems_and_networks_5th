@@ -149,3 +149,39 @@ Routing - Rotta per un singolo indirizzo IP:
 ip route 50.10.10.1 255.255.255.255 200.100.50.1
 
 
+
+
+access-list 101 deny ip 172.16.0.0 0.0.0.127 any
+
+access-list 101 permit ip any any
+
+interface FastEthernet0 0/0.10
+ip access-group 101 in
+
+
+
+
+interface FastEthernet0/0.40
+encapsulation dot1Q 40
+ip address 192.168.0.246 255.255.255.248
+exit
+
+
+
+
+
+
+
+
+
+
+
+interface Serial3/0
+ip nat inside
+exit
+interface Serial2/0
+ip nat outside
+exit
+ip nat inside source static 192.168.0.245 50.10.10.1
+
+
