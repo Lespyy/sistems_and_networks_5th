@@ -175,10 +175,75 @@ Cyber Security
             ma ci sono anche gli IBRIDI
 
 
+18-10-2024
+
+    Tipi di chiave
+
+        simmetrici
+
+            Cifrario di Vernam
+
+                non is usa 
+
+            DES 
+
+                violato ma usato
+
+            AES 
+
+
+            IDEA 
+
+
+        Asimmetrici
+
+            RSA 
+
+                2 giorni fa hanno violato RSA
+
+            Diffie HELLMAN
+
+    simmetrici
+
+        vantaggio chiavi corte
+
+            per essere robusta
+
+            <= 256 bit
+
+        Enorme problema del condivider la chiave
+
+        Poche risorse computazionali
+
+        complicati
+
+    Asimmetrici
+
+        Chiavi lunghe
+
+            per avere la stessa robustezza
+
+                >= 512bit anche fino a 4096 bit
+
+        No problema condivider la chiave 
+
+        tante risorse computazionali
+
+        semplice principi matematici
+
+        
+
+
+
+
+        
+
+            
+
+
 
 
     
-
 
 
 
